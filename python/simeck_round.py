@@ -1,7 +1,7 @@
 def round(pt_1, pt_2, key_round, n, c):
     # plaintext = t1[0:n-1]t2[0:n-1]
     # print(type(pt_1))
-    t1 = pt_1    
+    t1 = pt_1
     t2 = pt_2
     # print ("before texts 01 in hex",format(t1, '04x'), format(t2, "04X"))
     # print(key_0_list[i])
@@ -21,4 +21,3 @@ def round(pt_1, pt_2, key_round, n, c):
     return t1, t2
     # print(format(text1_list[-1], '016X'),
     #       format(text2_list[-1], "016X"), "ciphertext hex",)
-
