@@ -44,7 +44,7 @@ def SIMECK(plainText_1, plainText_2):
     c = 2**(n) - 1
     T = 44
 
-    key_0_list = []
+    # key_0_list = []
     import simeck_round
 
     import simeck_key

@@ -1,3 +1,5 @@
+# execution time : 1.514 s
+
 import simeck
 cipherText_1 = 0
 cipherText_2 = 0
