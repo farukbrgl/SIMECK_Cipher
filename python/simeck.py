@@ -49,6 +49,12 @@ def SIMECK(plainText_1, plainText_2):
 
     import simeck_key
     key = simeck_key.key_generation(t_2, t_1, t_0, k_0, T, n, z_0, z_1, c)
+    f_round = open("table_for_rounds.txt", "w")
+    f_round.write(
+        "Round |      pt1     |      pt2     |      round key    " + "\n")
+    f_round.write("start" + " |" + (format(plainText_1, '08X')) + "|"
+                  + format(plainText_2, '08X') + format(k_0, '08X') + "\n")
+
     for i in range(T):
         #     print(plainText_1, plainText_2, i)
 
@@ -56,6 +62,8 @@ def SIMECK(plainText_1, plainText_2):
         plainText_1 = pt1
         plainText_2 = pt2
         print(hex(plainText_1), hex(plainText_2), i)
+        f_round.write(str(i) + "     |" + (format(pt1, '08X')) + "|" + format(pt2,
+                                                                              '08X') + "|" + format(key[i], '08X') + "\n")
 
     cipherText_1 = plainText_1
     cipherText_2 = plainText_2

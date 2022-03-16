@@ -2,6 +2,12 @@ import simeck_round
 
 
 def key_generation(t_2, t_1, t_0, k_0, T, n, z_0, z_1, c):
+    f_key = open("table_for_keys.txt", "w")
+    f_key.write(
+        "Round |      k_i+3     |      k_i+2     |      k_i+1     |      k_i+0   " + "\n")
+    f_key.write("start" + " |" + (format(t_2, '08X')) + "|" + format(t_1,
+                                                                     '08X') + "|" + format(t_0, '08X') + "|" + format(k_0, '08X') + "\n")
+
     # print (key_0_n)
     # print ("key_0_n in hex",format(key_0_n, '016b'))
     key_r_list = []
@@ -25,28 +31,30 @@ def key_generation(t_2, t_1, t_0, k_0, T, n, z_0, z_1, c):
         t_2 = t_0
         t_0 = t_1
         t_1 = temp
+        f_key.write(str(j) + "     |" + (format(t_2, '08X')) + "|" + format(t_1,
+                    '08X') + "|" + format(t_0, '08X') + "|" + format(k_0, '08X') + "\n")
     # key_0_list.append(key_next)
     # print ("key{} = {}".format(i, key_next)
-
+    f_key.close()
     return key_list
 
 
 # # z sabitleri oluşturuluyor
-z_0 = [1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0,
-       1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1]
+# z_0 = [1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0,
+#       1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1]
 # z_1 = [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0]
-z_1 = [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1,
-       0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0]
+# z_1 = [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1,
+#       0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0]3
 
 # sabit değer
-n = 32
-c = 2**(n) - 1
-T = 44
-t_2 = 0x1b1a1918  # most significant
-t_1 = 0x13121110
-t_0 = 0x0b0a0908
-k_0 = 0x03020100  # least significant
+#n = 32
+#c = 2**(n) - 1
+#T = 44
+# t_2 = 0x1b1a1918  # most significant
+#t_1 = 0x13121110
+#t_0 = 0x0b0a0908
+# k_0 = 0x03020100  # least significant
 
 # for i in range (5):
-a = key_generation(t_2, t_1, t_0, k_0, T, n, z_0, z_1, c)
-print(a)
+#a = key_generation(t_2, t_1, t_0, k_0, T, n, z_0, z_1, c)
+# print(a)

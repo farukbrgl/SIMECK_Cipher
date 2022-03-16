@@ -1,4 +1,5 @@
 def round(pt_1, pt_2, key_round, n, c):
+
     # plaintext = t1[0:n-1]t2[0:n-1]
     # print(type(pt_1))
     t1 = pt_1
